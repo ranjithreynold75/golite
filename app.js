@@ -54,10 +54,10 @@ res.send("done");
 
 app.post("/datum",function(req,res){
    var d={
-       result:{
+       result:[{
            storage:data,
            temp:temp
-       }
+       }]
    };
     res.send(JSON.stringify(d));
 
