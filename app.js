@@ -6,7 +6,7 @@ var http=require('http').Server(app);
 var io=require('socket.io')(http);
 
 var data=0;
-var temp=0;
+var temp=0,hum=0;
 
 function notify(req,res,next)
 {
@@ -47,6 +47,7 @@ app.get("/data",function (req,res) {
 
     data=req.query.data;
     temp=req.query.t;
+    hum=req.query.h;
 console.log("storage");
 console.log(data);
 res.send("done");
@@ -56,7 +57,8 @@ app.post("/datum",function(req,res){
    var d={
        result:[{
            storage:data,
-           temp:temp
+           temp:temp,
+           hum:hum
        }]
    };
     res.send(JSON.stringify(d));
