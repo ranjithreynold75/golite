@@ -47,7 +47,7 @@ app.get('/low',function(req,res){
 
 app.get("/data",function (req,res) {
 
-    data=req.query.data;
+    data=((10-req.query.data)/10)*100;
     temp=req.query.t;
     hum=req.query.h;
 console.log("storage");
