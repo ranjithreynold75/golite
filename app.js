@@ -23,7 +23,7 @@ io.on("connection",function(socket)
 {
     console.log("A user connected:" + socket.id);
 
-    socket.join("room-golite");
+    socket.join("room01-golite");
 
     socket.emit("notify",{'message':"Welcome to Golite"});
 
