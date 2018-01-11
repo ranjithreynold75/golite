@@ -31,23 +31,23 @@ io.on("connection",function(socket)
 
 
 app.get('/',function(req,res){
-    res.send("<marquee>GoLite is online By vivek and his team</marquee>");
+    res.send("<marquee>GoLite is online</marquee>");
 });
 app.get('/high',function(req,res){
     console.log("high");
-    io.to("room-golite").emit('notify',{'message':"Grocery level is HIGH"});
+    io.to("room01-golite").emit('notify',{'message':"Grocery level is HIGH"});
     res.send("done");
 });
 
 app.get('/low',function(req,res){
     console.log("low");
-    io.to("room-golite").emit('notify',{'message':"Grocery level is LOW"});
+    io.to("room01-golite").emit('notify',{'message':"Grocery level is LOW"});
     res.send("done");
 });
 
 app.get("/data",function (req,res) {
 
-    data=(((12-req.query.data)/12)*100);
+    data=(((6-req.query.data)/6)*100);
     temp=req.query.t;
     hum=req.query.h;
 console.log("storage");
